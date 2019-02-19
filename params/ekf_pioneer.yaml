@@ -1,24 +1,24 @@
-frequency: 30
+frequency: 50
 sensor_timeout: 0.1
+two_d_mode: true
 
-odom0: rosaria
-odom0_config: [true,  true,  false,
-               false, false, false,
-               false, false, false,
-               false, false, true,
-               false, false, false]
-odom0_differential: false
+# odom0: /RosAria/pose
+# odom0_config: [false, false, false,
+#                false, false, false,
+#                true,  true,  false,
+#                false, false, true,
+#                false, false, false]
+# odom0_differential: false
 
-imu0: hokuyo3d
+imu0: /hokuyo3d/imu
 imu0_config: [false, false, false,
-              true, true, true,
-              false, false,  false,
-              true, true, true,
-              false, false, false]
+              false, false, true,
+              false, false, false,
+              false, false, true,
+              true,  false, false]
 imu0_differential: false
 
-odom_frame: odom            
-base_link_frame: base_link  
-world_frame: odom
-
-two_d_mode: true
+publish_tf: true
+odom_frame: imu_odom            
+base_link_frame: p3at_base
+world_frame: imu_odom
